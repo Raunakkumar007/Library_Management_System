@@ -1,4 +1,3 @@
-
 📚 Library Management System
 
 This is a desktop application built using Java Swing for managing library operations. It uses a MySQL database for storing data and provides a clean GUI for both admins and regular users.
