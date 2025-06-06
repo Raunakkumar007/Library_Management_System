@@ -1,11 +1,11 @@
 package view;
 
+import controller.BookDAO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.HashMap;
-import controller.BookDAO;
 
 public class IssueBook extends JFrame {
 
@@ -41,7 +41,6 @@ public class IssueBook extends JFrame {
 
         populateDropdowns(); // Fill dropdowns with book/user data
 
-        // Event Handling
         issueButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -56,8 +55,9 @@ public class IssueBook extends JFrame {
                 int bookId = bookMap.get(selectedBook);
                 int userId = userMap.get(selectedUser);
                 boolean isAvailable = BookDAO.isBookAvailable(bookId);
-                if(!isAvailable){
-                    JOptionPane.showMessageDialog(null, "This book is already issued and not available");
+
+                if (!isAvailable) {
+                    JOptionPane.showMessageDialog(null, "This book is already issued and not available.");
                     return;
                 }
 
@@ -80,7 +80,7 @@ public class IssueBook extends JFrame {
 
     private void populateDropdowns() {
         // Get books and populate
-        ArrayList<String[]> books = BookDAO.getAvailableBooks();// assuming [title, id]
+        ArrayList<String[]> books = BookDAO.getAvailableBooks(); // assuming [title, id]
         for (String[] book : books) {
             String title = book[0];
             int id = Integer.parseInt(book[1]);

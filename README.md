@@ -1,83 +1,57 @@
-# Library_Management_System
 
-Library Management System (Java + MySQL + Swing)
+📚 Library Management System
 
-A GUI-based Java project for managing books and users in a library using MySQL for persistent storage. This project supports secure login, user registration, role-based access, and standard book operations (add, delete, search, export).
+This is a desktop application built using Java Swing for managing library operations. It uses a MySQL database for storing data and provides a clean GUI for both admins and regular users.
 
+✨ Key Features
 
-Features:
-Login & Registration
-Role-based Access:
-Admin: Add, delete, search, export
-User: View, search, export
-GUI built using Java Swing
-MySQL database integration with JDBC
-Book list displayed using JList
-Data export to CSV file
+User Registration and Login (with roles: Admin and User)
+Add, Search, and Delete Books (Admin only)
+View complete list of books
+Issue and Return Books
+Export book list as a CSV file
+Role-based access control for features
 
-Technologies Used:
-Java (JDK )
-IntelliJ IDEA
-Java Swing (GUI)
-MySQL (Workbench)
-JDBC
+🔧 Technologies Used
 
+Java (JDK 8 or above)
+Java Swing (for GUI)
+MySQL (as the database)
+JDBC (for database connection)
 
-Project Structure
+🗂️ Project Structure
 
-src 
-  model
-            Book.java
-            
- controller
-           BookDAO.java
-           UserDAO.java
-           
- view
-           LoginScreen.java
-           RegisterScreen.java
-           LibraryGUI.java
-           
-  db. 
-           DBConnection.java
+controller: Data access logic (e.g., BookDAO, UserDAO)
+db: Database connection utility
+model: Data models like Book and User
+view: GUI components (LoginScreen, RegisterScreen, LibraryGUI, etc.)
 
+⚙️ Setup Instructions
 
-Database Schema
+Clone the repository from GitHub:
+git clone https://github.com/Raunakkumar007/LibraryManagementSystem.git
 
-Database: library_db
+Set up the MySQL database:
+Create a new database named librarydb
+Create the following tables: books, users, and issued_books
+Insert an admin account manually (example: username = admin, password = admin123, role = admin)
+Open DBConnection.java and update the database URL, username, and password according to your system.
+Open the project in your favorite Java IDE (e.g., IntelliJ, Eclipse, or NetBeans)
+Run the application starting from LoginScreen.java
 
-Table: books
+HOW TO RUN
 
-Column	Type
+Start from LoginScreen.java
+Register a user or login as admin (admin/admin)
+Admin can manage books and export CSV
+Any logged-in user can issue or return books
 
-id	INT, PRIMARY KEY, AUTO_INCREMENT
-name	VARCHAR(100)
-author	VARCHAR(100)
+✅ Possible Future Enhancements
 
-Table: users
+Encrypt passwords for better security
+Allow uploading book cover images
+Add filtering and sorting options for books
+Implement a dark mode for the UI
 
-Column	Type
-
-id	INT, PRIMARY KEY, AUTO_INCREMENT
-username	VARCHAR(100), UNIQUE
-password	VARCHAR(100)
-role	VARCHAR(20)
-
-
-How to Run
-
-1. Clone this repository:git clone https://github.com/yourusername/library-management-system.git
-2. Import into IntelliJ IDEA
-3. Set up your MySQL database using the provided schema
-4. Update DBConnection.java with your MySQL credentials
-5. Run LoginScreen.java
-
-
-Default Credentials
-
-Role	our Username	 our Password
-
-Admin	admin	1234
-User	user	guest
-
-This project is open-source.
+📄 License
+This project is open-source under the MIT License.

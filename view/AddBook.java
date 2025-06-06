@@ -1,9 +1,9 @@
 package view;
 
+import controller.BookDAO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import controller.BookDAO;
 
 public class AddBook extends JFrame {
     private JTextField titleField, authorField;
@@ -26,7 +26,7 @@ public class AddBook extends JFrame {
         add(authorField);
 
         addButton = new JButton("Add Book");
-        add(new JLabel());
+        add(new JLabel()); // empty label for spacing
         add(addButton);
 
         addButton.addActionListener(new ActionListener() {
@@ -59,4 +59,5 @@ public class AddBook extends JFrame {
         new AddBook();
     }
 }
+
 

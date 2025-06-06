@@ -1,9 +1,9 @@
 package view;
 
+import controller.BookDAO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import controller.BookDAO;
 
 public class ReturnBook extends JFrame {
 
@@ -49,8 +49,8 @@ public class ReturnBook extends JFrame {
                     int userId = Integer.parseInt(userIdText);
 
                     Boolean isIssued = BookDAO.isBookIssued(bookId, userId);
-                    if (!isIssued){
-                        JOptionPane.showMessageDialog(null, "This book was not issued to this user or has already been returned");
+                    if (!isIssued) {
+                        JOptionPane.showMessageDialog(null, "This book was not issued to this user or has already been returned.");
                         return;
                     }
 
